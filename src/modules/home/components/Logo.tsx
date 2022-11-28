@@ -1,5 +1,5 @@
 import { ReactElement } from 'react'
-import logo from '@app-assets/underwolf-stuido-logo-dark.png'
+import logo from '@app-assets/underwolf-stuido-logo-dark.svg'
 import { createStyles } from '@mantine/core'
 import clsx from 'clsx'
 

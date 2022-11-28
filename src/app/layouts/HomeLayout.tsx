@@ -7,13 +7,16 @@ interface IProps {
   children: ReactNode | ReactNode[]
 }
 
-const useStyles = createStyles(() => ({
+const useStyles = createStyles((theme) => ({
   logo: {
     cursor: 'default',
     userSelect: 'none',
+    color: theme.black,
+    fontWeight: 300,
+    fontSize: '1.4rem',
 
     '& > span': {
-      fontWeight: 'bold',
+      fontWeight: 600,
     },
   },
 }))
