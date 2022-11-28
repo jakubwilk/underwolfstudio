@@ -2,9 +2,14 @@
   "compilerOptions": {
     "baseUrl": "./src",
     "paths": {
+      "@app-assets/*": ["assets/*"],
+      "@app-configs": ["app/configs/index.ts"],
       "@app-domain": ["app/index.ts"],
+      "@app-layouts": ["app/layouts/index.ts"],
+      "app-pages": ["app/pages/index.ts"],
       "@app-style": ["style/"],
-      "@app-style/*": ["style/*"]
+      "@app-style/*": ["style/*"],
+      "@home": ["modules/home/index.ts"]
     },
     "target": "es5",
     "lib": ["dom", "dom.iterable", "esnext"],
