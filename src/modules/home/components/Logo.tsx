@@ -20,7 +20,7 @@ function Logo({ name, height, width = 50, alt }: IProps) {
   const { classes } = useStyles()
 
   return (
-    <div className={clsx('flex items-center', 'px-10', 'rounded-b', classes.logoWrapper)}>
+    <div className={clsx('flex items-center', 'px-10', 'rounded-b', 'shadow-sm', classes.logoWrapper)}>
       <img src={logo} height={height} width={width} alt={alt} />
       {name}
     </div>
