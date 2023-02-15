@@ -7,7 +7,7 @@ function HomePage() {
     <Fragment>
       <Helmet>
         <title>{'Underwolf Studio - Strona główna'}</title>
-        {/*<link rel={'canonical'} href={'https://www.tacobell.com/'} />*/}
+        <link rel={'canonical'} href={'https://www.underwolfstudio.com/'} />
       </Helmet>
       <Home />
     </Fragment>

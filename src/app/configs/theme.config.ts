@@ -1,6 +1,12 @@
 import { MantineThemeOverride } from '@mantine/styles'
 
 const theme: MantineThemeOverride = {
+  globalStyles: (theme) => ({
+    '*::selection': {
+      color: theme.white,
+      backgroundColor: theme.black,
+    },
+  }),
   white: '#ffffff',
   black: '#24201d',
   colors: {

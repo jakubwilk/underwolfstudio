@@ -1,23 +1,40 @@
+import { useMemo } from 'react'
 import { HomeLayout } from '@app-layouts'
-import { createStyles } from '@mantine/core'
+import { createStyles, Text } from '@mantine/core'
+import clsx from 'clsx'
 
-import HomeLink from './HomeLink'
+import Logo from './Logo'
 
 const useStyles = createStyles((theme) => ({
-  webDevLink: {
-    overflow: 'hidden',
-    justifyContent: 'end',
+  logo: {
+    cursor: 'default',
+    userSelect: 'none',
+    color: theme.black,
+    fontWeight: 300,
+    fontSize: '1.4rem',
 
-    '& > div': {
-      textAlign: 'right',
+    '& > span': {
+      fontWeight: 600,
     },
   },
-  gameDevLink: {
-    overflow: 'hidden',
-    justifyContent: 'start',
+  text: {
+    textTransform: 'uppercase',
+    letterSpacing: '1px',
+    fontWeight: 300,
 
-    '& > div': {
-      textAlign: 'left',
+    '&:first-of-type': {
+      marginBottom: '1rem',
+
+      [`@media (min-width: ${theme.breakpoints.sm}px)`]: {
+        marginRight: '1rem',
+        marginBottom: 0,
+      },
+    },
+
+    '&:last-of-type': {
+      [`@media (min-width: ${theme.breakpoints.sm}px)`]: {
+        marginLeft: '1rem',
+      },
     },
   },
 }))
@@ -25,19 +42,26 @@ const useStyles = createStyles((theme) => ({
 function Home() {
   const { classes } = useStyles()
 
+  const siteName = useMemo(() => {
+    return (
+      <Text className={clsx('ml-4', classes.logo)}>
+        {'under'}
+        <span>{'wolf'}</span>
+        {' studio'}
+      </Text>
+    )
+    // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, [])
+
   return (
     <HomeLayout>
-      <HomeLink
-        title={'Web Dev'}
-        description={'Aplikacje internetowe i wszelkiego rodzaju szeroko rozumiany Front-End'}
-        styles={classes.webDevLink}
-        isExternalUrl
-      />
-      <HomeLink
-        title={'Game Dev'}
-        description={'Gry z wciągającą historią, ciekawymi postaciami i przeróżnymi typami'}
-        styles={classes.gameDevLink}
-      />
+      <div className={'flex flex-col items-center'}>
+        <Logo name={siteName} />
+        <div className={'flex flex-col md:flex-row items-center mt-8 text-center'}>
+          <Text className={classes.text}>{'Web Development'}</Text>
+          <Text className={classes.text}>{'Game Development'}</Text>
+        </div>
+      </div>
     </HomeLayout>
   )
 }
