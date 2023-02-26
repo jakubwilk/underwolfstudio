@@ -1,6 +1,6 @@
 import { useMemo } from 'react'
 import { HomeLayout } from '@app-layouts'
-import { createStyles, Text } from '@mantine/core'
+import { createStyles, Text, Tooltip } from '@mantine/core'
 import clsx from 'clsx'
 
 import Logo from './Logo'
@@ -37,6 +37,10 @@ const useStyles = createStyles((theme) => ({
       },
     },
   },
+  disabled: {
+    userSelect: 'none',
+    opacity: 0.5,
+  },
 }))
 
 function Home() {
@@ -59,7 +63,9 @@ function Home() {
         <Logo name={siteName} />
         <div className={'flex flex-col md:flex-row items-center mt-8 text-center'}>
           <Text className={classes.text}>{'Web Development'}</Text>
-          <Text className={classes.text}>{'Game Development'}</Text>
+          <Tooltip label={'Soon'}>
+            <Text className={clsx(classes.text, classes.disabled)}>{'Game Development'}</Text>
+          </Tooltip>
         </div>
       </div>
     </HomeLayout>
