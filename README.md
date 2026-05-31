@@ -1,36 +1,62 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+# underwolfstudio
 
-## Getting Started
+Next.js 16 frontend with TypeScript strict mode, Mantine UI, and Tailwind CSS.
 
-First, run the development server:
+## Tech stack
+
+- **Next.js 16** — App Router
+- **TypeScript** — strict mode
+- **Mantine UI** — component library
+- **Tailwind CSS** — spacing & layout utilities
+- **Vitest + Testing Library** — unit tests
+- **ESLint + Prettier** — linting & formatting
+- **Husky + lint-staged** — pre-commit hooks
+
+## Getting started
 
 ```bash
+npm install
 npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+Open [http://localhost:3000](http://localhost:3000) in your browser.
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+## Commands
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+| Command                 | Description                    |
+| ----------------------- | ------------------------------ |
+| `npm run dev`           | Start development server       |
+| `npm run build`         | Production build               |
+| `npm run lint`          | Lint and auto-fix              |
+| `npm run format`        | Format all files with Prettier |
+| `npm test`              | Run tests                      |
+| `npm run test:coverage` | Run tests with coverage report |
 
-## Learn More
+## Project structure
 
-To learn more about Next.js, take a look at the following resources:
+```
+src/
+├── app/               # Next.js routes and layouts only
+├── modules/
+│   ├── common/        # Shared components, hooks, utils (importable by all modules)
+│   └── <feature>/     # Self-contained domain modules
+│       ├── api/
+│       ├── components/
+│       ├── context/
+│       ├── hooks/
+│       ├── models/
+│       ├── pages/
+│       └── utils/
+└── test/              # Vitest setup
+```
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+## Module rules
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
+- Feature modules must **not** import from each other
+- Shared code belongs in `common/`
+- Page components live in `<feature>/pages/` and are imported by `src/app/` routes
 
-## Deploy on Vercel
+## VS Code
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
-
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+Open the project in VS Code — format-on-save is pre-configured via `.vscode/settings.json`.
+Required extensions: [Prettier](https://marketplace.visualstudio.com/items?itemName=esbenp.prettier-vscode), [ESLint](https://marketplace.visualstudio.com/items?itemName=dbaeumer.vscode-eslint).
