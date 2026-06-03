@@ -1,4 +1,4 @@
-import { render, screen } from '@testing-library/react';
+import { render, screen } from '@/test/render';
 import { describe, expect, it } from 'vitest';
 
 import { ServicesStrip } from './ServicesStrip';
@@ -17,12 +17,12 @@ describe('ServicesStrip', () => {
     expect(screen.getByText('Frontend Application')).toBeInTheDocument();
   });
 
-  it('applies accent class to AI tags', () => {
+  it('applies accent colour to AI tags and not to others', () => {
     render(<ServicesStrip />);
-    expect(screen.getByText('AI Agents').className).toContain('services-orbit-tag--accent');
-    expect(screen.getByText('AI Workflows').className).toContain('services-orbit-tag--accent');
+    expect(screen.getByText('AI Agents').className).toContain('text-[var(--accent)]');
+    expect(screen.getByText('AI Workflows').className).toContain('text-[var(--accent)]');
     expect(screen.getByText('Frontend Application').className).not.toContain(
-      'services-orbit-tag--accent',
+      'text-[var(--accent)]',
     );
   });
 

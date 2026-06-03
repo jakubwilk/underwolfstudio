@@ -1,19 +1,60 @@
+import { Box, Text } from '@mantine/core';
+
+const TAG_FZ = 'clamp(1rem, 1.8vw, 1.35rem)';
+
 export function ServicesStrip() {
   return (
-    <section className="services-strip" aria-label="Services">
-      <div className="services-strip-glow" aria-hidden="true" />
-      <p className="services-strip-label">What we build</p>
-      <div className="services-orbit">
-        <span className="services-orbit-tag services-orbit-tag--tl services-orbit-tag--accent">
+    <Box
+      component="section"
+      aria-label="Services"
+      className="relative w-full py-[120px] px-12 flex flex-col items-center gap-16 bg-gradient-to-b from-[#0d0d18] to-[var(--bg)] border-t border-[var(--border-subtle)] overflow-hidden"
+    >
+      <Box
+        aria-hidden="true"
+        className="absolute w-[900px] h-[500px] -top-[120px] left-1/2 -translate-x-1/2 pointer-events-none"
+        style={{
+          background: 'radial-gradient(ellipse, rgba(99,102,241,0.08) 0%, transparent 70%)',
+        }}
+      />
+
+      <Text fz={10} className="tracking-[0.2em] uppercase text-[var(--text-tertiary)] m-0">
+        What we build
+      </Text>
+
+      <Box className="grid grid-cols-[1fr_auto_1fr] grid-rows-[auto_auto_auto] gap-x-[120px] gap-y-16 items-center justify-items-center max-w-[860px] w-full">
+        <Text
+          fz={TAG_FZ}
+          className="col-start-1 row-start-1 tracking-[-0.01em] text-[var(--accent)] font-medium text-right justify-self-end m-0"
+        >
           AI Agents
-        </span>
-        <span className="services-orbit-tag services-orbit-tag--tr services-orbit-tag--accent">
+        </Text>
+        <Text
+          fz={TAG_FZ}
+          className="col-start-3 row-start-1 tracking-[-0.01em] text-[var(--accent)] font-medium text-left justify-self-start m-0"
+        >
           AI Workflows
-        </span>
-        <div className="services-orbit-dot" aria-hidden="true" />
-        <span className="services-orbit-tag services-orbit-tag--bl">Fullstack Web Application</span>
-        <span className="services-orbit-tag services-orbit-tag--br">Frontend Application</span>
-      </div>
-    </section>
+        </Text>
+        <Box
+          aria-hidden="true"
+          className="col-start-2 row-start-2 w-[22px] h-[22px] rounded-full bg-[var(--accent)] shrink-0"
+          style={{
+            boxShadow:
+              '0 0 0 1px rgba(129,140,248,0.3), 0 0 16px rgba(129,140,248,0.8), 0 0 48px rgba(129,140,248,0.45), 0 0 96px rgba(129,140,248,0.2)',
+          }}
+        />
+        <Text
+          fz={TAG_FZ}
+          className="col-start-1 row-start-3 tracking-[-0.01em] text-[var(--text-secondary)] text-right justify-self-end m-0"
+        >
+          Fullstack Web Application
+        </Text>
+        <Text
+          fz={TAG_FZ}
+          className="col-start-3 row-start-3 tracking-[-0.01em] text-[var(--text-secondary)] text-left justify-self-start m-0"
+        >
+          Frontend Application
+        </Text>
+      </Box>
+    </Box>
   );
 }
