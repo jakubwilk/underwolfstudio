@@ -7,11 +7,11 @@ export function ServicesStrip() {
     <Box
       component="section"
       aria-label="Services"
-      className="relative w-full py-[120px] px-12 flex flex-col items-center gap-16 bg-gradient-to-b from-[#0d0d18] to-[var(--bg)] border-t border-[var(--border-subtle)] overflow-hidden"
+      className="relative w-full py-30 px-12 flex flex-col items-center gap-16 bg-linear-to-b from-[#0d0d18] to-[var(--bg)] border-t border-[var(--border-subtle)] overflow-hidden"
     >
       <Box
         aria-hidden="true"
-        className="absolute w-[900px] h-[500px] -top-[120px] left-1/2 -translate-x-1/2 pointer-events-none"
+        className="absolute w-225 h-125 -top-30 left-1/2 -translate-x-1/2 pointer-events-none"
         style={{
           background: 'radial-gradient(ellipse, rgba(99,102,241,0.08) 0%, transparent 70%)',
         }}
@@ -21,7 +21,7 @@ export function ServicesStrip() {
         What we build
       </Text>
 
-      <Box className="grid grid-cols-[1fr_auto_1fr] grid-rows-[auto_auto_auto] gap-x-[120px] gap-y-16 items-center justify-items-center max-w-[860px] w-full">
+      <Box className="grid grid-cols-[1fr_auto_1fr] grid-rows-[auto_auto_auto] gap-x-30 gap-y-16 items-center justify-items-center max-w-215 w-full">
         <Text
           fz={TAG_FZ}
           className="col-start-1 row-start-1 tracking-[-0.01em] text-[var(--accent)] font-medium text-right justify-self-end m-0"
@@ -36,7 +36,7 @@ export function ServicesStrip() {
         </Text>
         <Box
           aria-hidden="true"
-          className="col-start-2 row-start-2 w-[22px] h-[22px] rounded-full bg-[var(--accent)] shrink-0"
+          className="col-start-2 row-start-2 w-5.5 h-5.5 rounded-full bg-[var(--accent)] shrink-0"
           style={{
             boxShadow:
               '0 0 0 1px rgba(129,140,248,0.3), 0 0 16px rgba(129,140,248,0.8), 0 0 48px rgba(129,140,248,0.45), 0 0 96px rgba(129,140,248,0.2)',
