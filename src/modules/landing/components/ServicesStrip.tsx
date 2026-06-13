@@ -1,4 +1,4 @@
-import { Box, Group, Stack, Text } from '@mantine/core';
+import { Box, Stack, Text } from '@mantine/core';
 
 const TAG_FZ = 'clamp(1rem, 1.8vw, 1.35rem)';
 
@@ -51,51 +51,52 @@ export function ServicesStrip() {
         What we build
       </Text>
 
-      {/* Desktop orbit — hidden below md */}
+      {/* Desktop orbit with descriptions — hidden below md */}
       <Box
-        aria-hidden="true"
-        className="hidden md:grid grid-cols-[1fr_auto_1fr] grid-rows-[auto_auto_auto] gap-x-30 gap-y-16 items-center justify-items-center max-w-215 w-full"
+        visibleFrom="md"
+        className="grid grid-cols-[1fr_auto_1fr] grid-rows-[auto_auto_auto] gap-x-30 gap-y-16 items-center justify-items-center max-w-215 w-full"
       >
-        <Text
-          fz={TAG_FZ}
-          className="col-start-1 row-start-1 tracking-[-0.01em] text-(--accent) font-medium text-right justify-self-end m-0"
-        >
-          AI Agents
-        </Text>
-        <Text
-          fz={TAG_FZ}
-          className="col-start-3 row-start-1 tracking-[-0.01em] text-(--accent) font-medium text-left justify-self-start m-0"
-        >
-          AI Workflows
-        </Text>
+        {SERVICES.map(({ title, description, accent }, i) => {
+          const isLeft = i % 2 === 0;
+          return (
+            <Stack
+              key={title}
+              style={{ gridColumnStart: isLeft ? 1 : 3, gridRowStart: i < 2 ? 1 : 3 }}
+              className={`gap-1.5 ${isLeft ? 'items-end' : 'items-start'}`}
+            >
+              <Text
+                fz={TAG_FZ}
+                className={`tracking-[-0.01em] font-medium m-0 ${isLeft ? 'text-right' : 'text-left'} ${accent ? 'text-(--accent)' : 'text-(--text-secondary)'}`}
+              >
+                {title}
+              </Text>
+              <Text
+                fz="xs"
+                className={`m-0 leading-relaxed max-w-50 ${isLeft ? 'text-right' : 'text-left'} ${accent ? 'text-(--text-secondary)' : 'text-(--text-tertiary)'}`}
+              >
+                {description}
+              </Text>
+            </Stack>
+          );
+        })}
+
         <Box
+          aria-hidden="true"
           className="col-start-2 row-start-2 w-5.5 h-5.5 rounded-full bg-(--accent) shrink-0"
           style={{ boxShadow: DOT_GLOW }}
         />
-        <Text
-          fz={TAG_FZ}
-          className="col-start-1 row-start-3 tracking-[-0.01em] text-(--text-secondary) text-right justify-self-end m-0"
-        >
-          Fullstack Web Application
-        </Text>
-        <Text
-          fz={TAG_FZ}
-          className="col-start-3 row-start-3 tracking-[-0.01em] text-(--text-secondary) text-left justify-self-start m-0"
-        >
-          Frontend Application
-        </Text>
       </Box>
 
       {/* Mobile stack — hidden at md and above */}
-      <Stack className="md:hidden w-full max-w-sm gap-10">
+      <Stack hiddenFrom="md" gap={40} className="w-full max-w-sm">
         {SERVICES.map(({ title, description, accent }) => (
-          <Group key={title} align="flex-start" className="gap-4 flex-nowrap">
+          <Box key={title} className="flex items-start gap-3">
             <Box
               aria-hidden="true"
-              className="w-2.5 h-2.5 rounded-full bg-(--accent) shrink-0 mt-1.5"
+              className="w-2 h-2 rounded-full bg-(--accent) shrink-0 mt-1.75"
               style={{ boxShadow: DOT_GLOW }}
             />
-            <Stack className="gap-1.5">
+            <Stack gap={6}>
               <Text
                 fz="md"
                 fw={500}
@@ -107,7 +108,7 @@ export function ServicesStrip() {
                 {description}
               </Text>
             </Stack>
-          </Group>
+          </Box>
         ))}
       </Stack>
     </Box>
