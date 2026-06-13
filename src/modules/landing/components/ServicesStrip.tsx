@@ -47,7 +47,10 @@ export function ServicesStrip() {
         }}
       />
 
-      <Text fz={10} className="tracking-[0.2em] uppercase text-(--text-tertiary) m-0">
+      <Text
+        fz="clamp(0.95rem, 1.5vw, 1.05rem)"
+        className="tracking-[0.2em] uppercase text-(--text-tertiary) m-0"
+      >
         What we build
       </Text>
 
@@ -71,7 +74,7 @@ export function ServicesStrip() {
                 {title}
               </Text>
               <Text
-                fz="xs"
+                fz="md"
                 className={`m-0 leading-relaxed max-w-50 ${isLeft ? 'text-right' : 'text-left'} ${accent ? 'text-(--text-secondary)' : 'text-(--text-tertiary)'}`}
               >
                 {description}
