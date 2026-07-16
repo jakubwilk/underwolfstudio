@@ -69,7 +69,7 @@ export function ServicesStrip() {
             >
               <Text
                 fz={TAG_FZ}
-                className={`tracking-[-0.01em] font-medium m-0 ${isLeft ? 'text-right' : 'text-left'} ${accent ? 'text-(--accent)' : 'text-(--text-secondary)'}`}
+                className={`tracking-[-0.01em] font-medium m-0 max-w-50 wrap-break-word ${isLeft ? 'text-right' : 'text-left'} ${accent ? 'text-(--accent)' : 'text-(--text-secondary)'}`}
               >
                 {title}
               </Text>
@@ -103,7 +103,7 @@ export function ServicesStrip() {
               <Text
                 fz="md"
                 fw={500}
-                className={`m-0 tracking-[-0.01em] ${accent ? 'text-(--accent)' : 'text-foreground'}`}
+                className={`m-0 tracking-[-0.01em] wrap-break-word ${accent ? 'text-(--accent)' : 'text-foreground'}`}
               >
                 {title}
               </Text>
