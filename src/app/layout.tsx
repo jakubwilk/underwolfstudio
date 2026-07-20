@@ -1,5 +1,5 @@
 import type { Metadata } from 'next';
-import { Space_Grotesk } from 'next/font/google';
+import { IBM_Plex_Mono, Space_Grotesk } from 'next/font/google';
 import { ColorSchemeScript, MantineProvider, createTheme } from '@mantine/core';
 import { Notifications } from '@mantine/notifications';
 import '@mantine/core/styles.css';
@@ -12,8 +12,16 @@ const spaceGrotesk = Space_Grotesk({
   display: 'swap',
 });
 
+const ibmPlexMono = IBM_Plex_Mono({
+  subsets: ['latin'],
+  weight: ['400', '500'],
+  variable: '--font-mono',
+  display: 'swap',
+});
+
 const theme = createTheme({
   fontFamily: 'var(--font-space-grotesk), system-ui, sans-serif',
+  fontFamilyMonospace: 'var(--font-mono), ui-monospace, monospace',
   primaryColor: 'violet',
 });
 
@@ -24,7 +32,11 @@ export const metadata: Metadata = {
 
 export default function RootLayout({ children }: { children: React.ReactNode }) {
   return (
-    <html lang="en" suppressHydrationWarning className={spaceGrotesk.variable}>
+    <html
+      lang="en"
+      suppressHydrationWarning
+      className={`${spaceGrotesk.variable} ${ibmPlexMono.variable}`}
+    >
       <head>
         <ColorSchemeScript defaultColorScheme="dark" />
       </head>
