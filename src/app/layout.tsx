@@ -28,6 +28,9 @@ const theme = createTheme({
 export const metadata: Metadata = {
   title: 'Underwolf Studio — AI Era',
   description: 'Underwolf Studio — intelligent solutions built for tomorrow.',
+  icons: {
+    icon: '/favicon.svg',
+  },
 };
 
 export default function RootLayout({ children }: { children: React.ReactNode }) {
