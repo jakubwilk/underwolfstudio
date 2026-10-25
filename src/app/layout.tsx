@@ -1,10 +1,11 @@
-import type { Metadata } from 'next';
+import { ColorSchemeScript, MantineProvider, mantineHtmlProps } from '@mantine/core';
+import type { Metadata, Viewport } from 'next';
 import { IBM_Plex_Mono, Space_Grotesk } from 'next/font/google';
-import { ColorSchemeScript, MantineProvider, createTheme } from '@mantine/core';
-import { Notifications } from '@mantine/notifications';
 import '@mantine/core/styles.css';
-import '@mantine/notifications/styles.css';
 import './globals.css';
+
+import { SITE_DESCRIPTION, SITE_NAME, SITE_TITLE, SITE_URL } from '@/modules/common/utils/site';
+import { theme } from '@/modules/common/utils/theme';
 
 const spaceGrotesk = Space_Grotesk({
   subsets: ['latin'],
@@ -19,25 +20,36 @@ const ibmPlexMono = IBM_Plex_Mono({
   display: 'swap',
 });
 
-const theme = createTheme({
-  fontFamily: 'var(--font-space-grotesk), system-ui, sans-serif',
-  fontFamilyMonospace: 'var(--font-mono), ui-monospace, monospace',
-  primaryColor: 'violet',
-});
-
 export const metadata: Metadata = {
-  title: 'Underwolf Studio — AI Era',
-  description: 'Underwolf Studio — intelligent solutions built for tomorrow.',
-  icons: {
-    icon: '/favicon.svg',
+  metadataBase: new URL(SITE_URL),
+  title: SITE_TITLE,
+  description: SITE_DESCRIPTION,
+  alternates: { canonical: '/' },
+  openGraph: {
+    type: 'website',
+    url: '/',
+    siteName: SITE_NAME,
+    title: SITE_TITLE,
+    description: SITE_DESCRIPTION,
+    locale: 'en_US',
   },
+  twitter: {
+    card: 'summary_large_image',
+    title: SITE_TITLE,
+    description: SITE_DESCRIPTION,
+  },
+};
+
+export const viewport: Viewport = {
+  themeColor: '#08080f',
+  colorScheme: 'dark',
 };
 
 export default function RootLayout({ children }: { children: React.ReactNode }) {
   return (
     <html
       lang="en"
-      suppressHydrationWarning
+      {...mantineHtmlProps}
       className={`${spaceGrotesk.variable} ${ibmPlexMono.variable}`}
     >
       <head>
@@ -45,7 +57,6 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
       </head>
       <body>
         <MantineProvider theme={theme} defaultColorScheme="dark">
-          <Notifications />
           {children}
         </MantineProvider>
       </body>
