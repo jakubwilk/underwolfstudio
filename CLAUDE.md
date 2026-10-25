@@ -18,7 +18,7 @@ Next.js 16 frontend (App Router), TypeScript strict mode.
 - Named exports only (except Next.js required defaults: page.tsx, layout.tsx)
 - Import order enforced by ESLint (builtin → external → internal)
 - Mantine UI for all components — prefer Mantine over raw HTML
-- Tailwind for spacing/layout utilities only, not for component styling
+- Tailwind for layout, spacing and visual details (colours, borders, type tweaks) via design tokens — CSS vars in `src/app/globals.css` (e.g. `text-(--text-secondary)`, `border-(--border-subtle)`); use `font-mono` for IBM Plex Mono
 - All components must have a co-located `.test.tsx` file
 - Commit format: `feat|fix|chore|refactor(scope): description`
 
@@ -29,7 +29,7 @@ Code is organised into feature modules under `src/modules/`:
 - `common/` — the only module that can be imported by other modules. Contains shared components, hooks, API helpers, types, utils, and contexts.
 - `<feature>/` (e.g. `auth`, `users`, `dashboard`) — self-contained domain modules. Each has: `api/`, `components/`, `context/`, `hooks/`, `models/`, `pages/`, `utils/`.
 
-**Module boundary rule (enforced by ESLint):** modules must NOT import from each other. A module may only import from:
+**Module boundary rule (enforced by ESLint `import/no-restricted-paths` in `eslint.config.mjs`):** modules must NOT import from each other. A module may only import from:
 
 1. Its own files
 2. `@/modules/common/**`
