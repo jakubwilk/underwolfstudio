@@ -1,9 +1,0 @@
-<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100" width="512" height="512">
-  <title>underwolfstudio.com — favicon 1b</title>
-  <rect width="100" height="100" fill="#242424"></rect>
-  <path d="M10 4 L34 28 L14 34 Z" fill="#9775fa"></path>
-  <path d="M90 4 L66 28 L86 34 Z" fill="#9775fa"></path>
-  <path d="M18 30 L50 86 L82 30" fill="none" stroke="#9775fa" stroke-width="13" stroke-linejoin="miter" stroke-miterlimit="10"></path>
-  <circle cx="40" cy="46" r="5" fill="#242424"></circle>
-  <circle cx="60" cy="46" r="5" fill="#242424"></circle>
-</svg>
