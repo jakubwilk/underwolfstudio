@@ -1,20 +1,33 @@
-import { render, screen } from '@/test/render';
 import { describe, expect, it } from 'vitest';
+
+import { render, screen } from '@/test/render';
 
 import { ServicesStrip } from './ServicesStrip';
 
+const SERVICE_TITLES = [
+  'AI Agents',
+  'AI Workflows',
+  'Fullstack Web Application',
+  'Frontend Application',
+];
+
 describe('ServicesStrip', () => {
-  it('renders the section label', () => {
+  it('renders the section heading', () => {
     render(<ServicesStrip />);
-    expect(screen.getByText('What we build')).toBeInTheDocument();
+    expect(screen.getByRole('heading', { level: 2, name: 'What we build' })).toBeInTheDocument();
   });
 
-  it('renders all service tags', () => {
+  it('renders every service as a level-3 heading', () => {
     render(<ServicesStrip />);
-    expect(screen.getAllByText('AI Agents').length).toBeGreaterThan(0);
-    expect(screen.getAllByText('AI Workflows').length).toBeGreaterThan(0);
-    expect(screen.getAllByText('Fullstack Web Application').length).toBeGreaterThan(0);
-    expect(screen.getAllByText('Frontend Application').length).toBeGreaterThan(0);
+    for (const title of SERVICE_TITLES) {
+      expect(screen.getAllByRole('heading', { level: 3, name: title }).length).toBeGreaterThan(0);
+    }
+  });
+
+  it('renders services as list items', () => {
+    render(<ServicesStrip />);
+    // Desktop and mobile layouts are both in the DOM; CSS hides one of them.
+    expect(screen.getAllByRole('listitem')).toHaveLength(SERVICE_TITLES.length * 2);
   });
 
   it('applies accent colour to AI tags and not to others', () => {
@@ -24,11 +37,5 @@ describe('ServicesStrip', () => {
     expect(screen.getAllByText('Frontend Application')[0].className).not.toContain(
       'text-(--accent)',
     );
-  });
-
-  it('does not render removed services', () => {
-    render(<ServicesStrip />);
-    expect(screen.queryByText('Backend API')).not.toBeInTheDocument();
-    expect(screen.queryByText('UI / UX Design')).not.toBeInTheDocument();
   });
 });
