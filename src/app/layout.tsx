@@ -38,6 +38,10 @@ export const metadata: Metadata = {
     title: SITE_TITLE,
     description: SITE_DESCRIPTION,
   },
+  verification: {
+    // Bing Webmaster Tools (also verified by public/BingSiteAuth.xml).
+    other: { 'msvalidate.01': '78E9F3E365E82884321010A05A058D95' },
+  },
 };
 
 export const viewport: Viewport = {
