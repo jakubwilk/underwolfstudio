@@ -1,1 +1,5 @@
 package-lock.json
+
+# Search engine verification files must stay byte-for-byte as issued.
+public/BingSiteAuth.xml
+public/google*.html

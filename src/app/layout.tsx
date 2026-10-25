@@ -38,8 +38,9 @@ export const metadata: Metadata = {
     title: SITE_TITLE,
     description: SITE_DESCRIPTION,
   },
+  // Search engine ownership checks; the files in public/ verify the same accounts.
   verification: {
-    // Bing Webmaster Tools (also verified by public/BingSiteAuth.xml).
+    google: 'bXwX5ZVI98qDNBc2ULzzJ6KZt_xzMgOYgXG64vILX0o',
     other: { 'msvalidate.01': '78E9F3E365E82884321010A05A058D95' },
   },
 };
