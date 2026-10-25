@@ -27,7 +27,7 @@ export function BlueprintFrame({
       {label ? (
         <Box
           component="span"
-          className="absolute -top-[9px] left-6 px-2 bg-(--bg) text-[11px] tracking-[0.14em] text-(--text-tertiary) uppercase font-(family-name:--font-mono)"
+          className="absolute z-10 -top-[9px] left-6 px-2 bg-(--bg) text-[11px] tracking-[0.14em] text-(--text-tertiary) uppercase font-mono"
         >
           {label}
         </Box>
@@ -35,7 +35,7 @@ export function BlueprintFrame({
       {index ? (
         <Box
           component="span"
-          className="absolute -top-[9px] right-6 px-2 bg-(--bg) text-[11px] tracking-[0.14em] text-(--text-tertiary) font-(family-name:--font-mono)"
+          className="absolute z-10 -top-[9px] right-6 px-2 bg-(--bg) text-[11px] tracking-[0.14em] text-(--text-tertiary) font-mono"
         >
           [{index}]
         </Box>

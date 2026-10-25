@@ -1,5 +1,6 @@
-import { render, screen } from '@/test/render';
 import { describe, expect, it } from 'vitest';
+
+import { render, screen } from '@/test/render';
 
 import { BlueprintFrame } from './BlueprintFrame';
 
