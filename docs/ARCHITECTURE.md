@@ -48,7 +48,7 @@ src/modules/
      → imports from @/modules/users/hooks/useUser        (cross-module — LINT ERROR)
 ```
 
-This is enforced automatically by the `no-restricted-imports` ESLint rule. If two modules need the same piece of code, move it to `common`.
+This is enforced automatically by the `import/no-restricted-paths` ESLint rule (zones are generated per module in `eslint.config.mjs`, so new modules are covered without config changes). `common` may not import from feature modules either. If two modules need the same piece of code, move it to `common`.
 
 ## State management
 
@@ -64,8 +64,8 @@ This is enforced automatically by the `no-restricted-imports` ESLint rule. If tw
 
 ## Styling strategy
 
-- **Mantine UI** — primary component library for all interactive UI
-- **Tailwind CSS** — utility classes for layout and spacing only
+- **Mantine UI** — primary component library for all interactive UI and typography (`Title`, `Text`, `Stack`, …)
+- **Tailwind CSS** — layout, spacing and visual details, always via the design tokens (CSS vars) defined in `src/app/globals.css`
 - Do not mix Mantine's `sx` prop with Tailwind on the same element
 
 ## Environment variables
