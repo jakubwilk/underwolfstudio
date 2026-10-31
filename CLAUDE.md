@@ -22,6 +22,11 @@ Next.js 16 frontend (App Router), TypeScript strict mode.
 - All components must have a co-located `.test.tsx` file
 - Commit format: `feat|fix|chore|refactor(scope): description`
 
+## Git
+
+- **Never create branches** (`git branch`, `git checkout -b`, `git switch -c`, worktrees, etc.)
+- **Never make commits** (`git commit`, `git commit --amend`, etc.) — leave all changes uncommitted in the working tree; the user commits manually
+
 ## Module architecture
 
 Code is organised into feature modules under `src/modules/`:
