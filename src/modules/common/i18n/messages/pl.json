@@ -1,0 +1,339 @@
+{
+  "metadata": {
+    "title": "Automatyzacje, agenci AI i aplikacje internetowe | Underwolf Studio",
+    "description": "Automatyzuję powtarzalną pracę w firmach, buduję agentów AI i aplikacje internetowe: obieg dokumentów, przepisywanie danych, obsługa klientów, panele i systemy wewnętrzne. Połączone z narzędziami, których już używasz. Warszawa i zdalnie.",
+    "ogHeadline": "Twoja firma na autopilocie"
+  },
+  "nav": {
+    "switchTo": "EN",
+    "switchToLabel": "English version"
+  },
+  "header": {
+    "ariaLabel": "Nawigacja główna",
+    "links": {
+      "services": "Usługi",
+      "caseStudies": "Realizacje",
+      "process": "Współpraca",
+      "faq": "FAQ"
+    },
+    "cta": "Umów konsultację",
+    "menu": "Menu",
+    "openMenu": "Otwórz menu"
+  },
+  "hero": {
+    "ariaLabel": "Wprowadzenie",
+    "eyebrow": "Automatyzacje · Agenci AI · Aplikacje internetowe",
+    "title": "Twoja firma na autopilocie",
+    "subtitle": "Automatyzuję powtarzalną pracę, buduję agentów AI i aplikacje internetowe: od obiegu dokumentów i odpowiedzi na pytania klientów po panele i systemy szyte na miarę. Połączone z narzędziami, których już używasz.",
+    "cta": "Opisz swój proces",
+    "stats": {
+      "price": {
+        "value": "od {price}",
+        "label": "wdrożenie netto"
+      },
+      "gdpr": {
+        "value": "RODO",
+        "label": "dane pod kontrolą"
+      }
+    },
+    "card": {
+      "title": "Dokumenty kosztowe → księgowość",
+      "status": "Aktywny",
+      "steps": {
+        "inbox": {
+          "title": "Nowa faktura w skrzynce",
+          "tool": "Gmail · załącznik PDF"
+        },
+        "extract": {
+          "title": "Odczyt danych przez AI",
+          "tool": "NIP, kwoty, daty, pozycje"
+        },
+        "assign": {
+          "title": "Przypisanie do klienta",
+          "tool": "Google Drive · folder miesiąca"
+        },
+        "export": {
+          "title": "Plik importu gotowy",
+          "tool": "Program księgowy"
+        },
+        "notify": {
+          "title": "Powiadomienie zespołu",
+          "tool": "Slack · #ksiegowosc"
+        }
+      }
+    }
+  },
+  "integrations": {
+    "ariaLabel": "Integracje",
+    "label": "Integracje z narzędziami, których już używasz",
+    "more": "+ inne"
+  },
+  "services": {
+    "label": "Usługi",
+    "ariaLabel": "Usługi",
+    "title": "Co robię",
+    "description": "Automatyzacje, agenci AI i aplikacje internetowe. Narzędzia dobieram do problemu, a nie odwrotnie.",
+    "pillars": {
+      "automation": {
+        "title": "Automatyzacje procesów",
+        "description": "Łączę programy, z których korzystasz, żeby dane same między nimi przepływały, a powtarzalne zadania działy się bez Twojego udziału.",
+        "examples": "Obieg dokumentów, przypomnienia, raporty, synchronizacja danych.",
+        "tools": "n8n · API · webhooki"
+      },
+      "agents": {
+        "title": "Agenci AI",
+        "description": "Asystenci, którzy czytają dokumenty, odpowiadają klientom i podejmują proste decyzje, a trudniejsze sprawy przekazują człowiekowi.",
+        "examples": "Odczyt faktur, obsługa zapytań, asystent dla klientów i zespołu.",
+        "tools": "LangGraph · LLM · RAG"
+      },
+      "webApps": {
+        "title": "Aplikacje internetowe",
+        "description": "Projektuję i buduję aplikacje szyte na miarę: od prostego narzędzia dla zespołu po system z panelem dla Twoich klientów.",
+        "examples": "Panele klienta, systemy wewnętrzne, MVP nowych produktów.",
+        "tools": "Next.js · React · TypeScript"
+      }
+    },
+    "industriesTitle": "Typowe zastosowania w Twojej branży",
+    "industriesLabel": "Wybierz branżę",
+    "industries": {
+      "accounting": {
+        "name": "Biura rachunkowe",
+        "items": {
+          "documents": {
+            "title": "Dokumenty z pięciu kanałów",
+            "description": "Zbieram je automatycznie w jednym miejscu, posortowane według klienta i miesiąca."
+          },
+          "dataEntry": {
+            "title": "Przepisywanie faktur",
+            "description": "AI odczytuje faktury i paragony, a Ty dostajesz dane gotowe do importu."
+          },
+          "followUp": {
+            "title": "Pogoń za brakami",
+            "description": "Przypomnienia wychodzą same, tylko do klientów, którzy jeszcze nic nie przysłali."
+          },
+          "questions": {
+            "title": "Te same pytania",
+            "description": "Asystent odpowiada na pytania o terminy i kwoty, trudniejsze przekazuje Tobie."
+          }
+        }
+      },
+      "legal": {
+        "name": "Kancelarie",
+        "items": {
+          "documents": {
+            "title": "Załączniki w skrzynce",
+            "description": "Dokumenty od klientów trafiają automatycznie do właściwej sprawy, opisane i uporządkowane."
+          },
+          "dataEntry": {
+            "title": "Pisma od zera",
+            "description": "Szablony pism i umów uzupełniają się danymi klienta i sprawy. Ty sprawdzasz treść."
+          },
+          "followUp": {
+            "title": "Pilnowanie terminów",
+            "description": "Terminy z pism trafiają do kalendarza, a przypomnienia wychodzą z wyprzedzeniem."
+          },
+          "questions": {
+            "title": "„Co z moją sprawą?”",
+            "description": "Klient dostaje aktualizację automatycznie, gdy w sprawie coś się zmieni."
+          }
+        }
+      },
+      "services": {
+        "name": "Firmy usługowe",
+        "items": {
+          "documents": {
+            "title": "Zapytania z każdej strony",
+            "description": "Maile, formularze i wiadomości trafiają do jednej listy, posortowane według pilności."
+          },
+          "dataEntry": {
+            "title": "Kopiuj-wklej między systemami",
+            "description": "Dane z formularzy, maili i arkuszy same trafiają do CRM-a i faktur."
+          },
+          "followUp": {
+            "title": "Ręczne follow-upy",
+            "description": "Przypomnienia o wizytach, płatnościach i ofertach wychodzą same."
+          },
+          "questions": {
+            "title": "Te same pytania",
+            "description": "Asystent AI odpowiada na typowe pytania o ofertę, ceny i terminy."
+          }
+        }
+      }
+    }
+  },
+  "caseStudies": {
+    "label": "Realizacje",
+    "ariaLabel": "Realizacje",
+    "title": "Wdrożenie we własnej firmie",
+    "description": "Automatyzacja, która obsługuje zapytania wysłane przez formularz na tej stronie.",
+    "columns": {
+      "process": "Proces",
+      "before": "Przed",
+      "after": "Po"
+    },
+    "badges": {
+      "own": "Wdrożenie własne"
+    },
+    "items": {
+      "inquiries": {
+        "title": "Obsługa zapytań ze strony",
+        "problem": "Każde zapytanie trzeba przeczytać, ocenić i na nie odpisać.",
+        "effect": "AI klasyfikuje zapytanie i odsiewa spam, zapisuje je w bazie, powiadamia mnie i od razu wysyła spersonalizowaną odpowiedź.",
+        "result": ""
+      }
+    }
+  },
+  "process": {
+    "label": "Współpraca",
+    "ariaLabel": "Jak pracuję",
+    "title": "Jak pracuję",
+    "priceLabel": "Wdrożenie",
+    "price": "od {price} netto",
+    "priceNote": "Cena zależy od liczby systemów, wolumenu danych, użycia AI i zakresu aplikacji.",
+    "step": "Krok {number}",
+    "steps": {
+      "message": {
+        "title": "Wiadomość",
+        "description": "Opisujesz w kilku zdaniach, co zabiera Ci najwięcej czasu."
+      },
+      "analysis": {
+        "title": "Analiza i wycena",
+        "description": "Sprawdzam, jak dziś wygląda proces, i dostajesz konkretną propozycję z ceną."
+      },
+      "build": {
+        "title": "Wdrożenie",
+        "description": "Buduję i testuję rozwiązanie na Twoich danych, bez przestojów w pracy firmy."
+      },
+      "support": {
+        "title": "Wsparcie",
+        "description": "Pilnuję, żeby działało, i rozwijam je, gdy firma rośnie."
+      }
+    }
+  },
+  "faq": {
+    "label": "FAQ",
+    "ariaLabel": "Najczęstsze pytania",
+    "title": "Najczęstsze pytania",
+    "intro": "Nie ma tu Twojego pytania? <link>Napisz bezpośrednio</link>, a odpowiem najszybciej, jak się da.",
+    "items": {
+      "gdpr": {
+        "question": "Co z RODO?",
+        "answer": "Podpisujemy umowę powierzenia przetwarzania danych. Automatyzacja przetwarza tylko dane potrzebne do zadania, a narzędzia dobieram tak, żeby dane zostawały w Unii Europejskiej. Tam, gdzie AI nie jest potrzebne, dane w ogóle do niego nie trafiają."
+      },
+      "security": {
+        "question": "Czy moje dane są bezpieczne?",
+        "answer": "Narzędzia dobieram do zadania, np. n8n do automatyzacji procesów albo LangGraph do agentów AI. Wszystko może działać na Twoim serwerze albo na dedykowanym serwerze w UE, a nie we wspólnym serwisie. Dostęp do Twoich systemów dostaję tylko w zakresie potrzebnym do automatyzacji, a dostawców AI wybieram spośród tych, którzy nie trenują modeli na danych przesyłanych przez API."
+      },
+      "integrations": {
+        "question": "Czy to zadziała z programami, których używam?",
+        "answer": "Najczęściej tak. Łączę się z programami przez API lub import plików, a do tego z pocztą, Google Workspace, Microsoft 365, arkuszami, CRM-ami i komunikatorami. Na etapie analizy sprawdzam, co da się połączyć w Twoim przypadku, zanim cokolwiek wycenię."
+      },
+      "webApps": {
+        "question": "Jakie aplikacje internetowe robisz?",
+        "answer": "Aplikacje szyte na miarę: panele dla klientów, systemy wewnętrzne do obsługi zamówień czy zgłoszeń oraz pierwsze wersje (MVP) nowych produktów. Buduję je w Next.js, React i TypeScript, a po wdrożeniu mogę zająć się hostingiem i utrzymaniem. Jeśli aplikacja ma współpracować z automatyzacjami albo agentami AI, od początku projektuję to jako całość."
+      },
+      "failure": {
+        "question": "Co, jeśli coś przestanie działać?",
+        "answer": "Automatyzacja zgłasza błędy od razu, więc zwykle wiem o problemie wcześniej niż Ty. W ramach wsparcia naprawiam usterki i dostosowuję workflow, gdy zmieni się np. program albo format dokumentów. Ważne procesy mają też ścieżkę awaryjną."
+      },
+      "duration": {
+        "question": "Ile trwa wdrożenie?",
+        "answer": "Prostą automatyzację, np. przypomnienia, uruchamiam zwykle w 1–2 tygodnie. Rozwiązania z odczytem dokumentów przez AI i kilkoma systemami trwają dłużej, a aplikacje buduję etapami, tak żeby pierwsza wersja działała jak najszybciej. Dokładny termin dostajesz razem z wyceną."
+      },
+      "technical": {
+        "question": "Czy muszę znać się na technologii?",
+        "answer": "Nie. Wystarczy, że opowiesz, jak dziś wygląda praca w firmie. Techniczną stronę biorę na siebie, a na koniec pokazuję, jak korzystać z rozwiązania."
+      }
+    }
+  },
+  "contact": {
+    "label": "Kontakt",
+    "ariaLabel": "Kontakt",
+    "title": "Napisz, co zajmuje Ci najwięcej czasu",
+    "subtitle": "Odpiszę z pytaniami albo pierwszą propozycją rozwiązania. Bez zobowiązań.",
+    "form": {
+      "name": "Imię",
+      "namePlaceholder": "Jak mam się do Ciebie zwracać?",
+      "email": "Email",
+      "emailPlaceholder": "ty@twojafirma.pl",
+      "message": "W czym mogę pomóc?",
+      "messagePlaceholder": "Np. klienci wysyłają dokumenty na różne adresy i co miesiąc tracę dzień na ich zbieranie.",
+      "honeypot": "Zostaw to pole puste",
+      "submit": "Wyślij wiadomość"
+    },
+    "errors": {
+      "nameRequired": "Podaj imię",
+      "nameTooLong": "Imię jest za długie",
+      "emailInvalid": "Podaj poprawny adres email",
+      "messageTooShort": "Napisz kilka słów więcej",
+      "messageTooLong": "Wiadomość jest za długa",
+      "verification": "Poczekaj, aż weryfikacja antyspamowa się zakończy"
+    },
+    "success": {
+      "title": "Dziękuję, wiadomość dotarła",
+      "body": "Odpiszę na podany adres email. Sprawdź też folder spam, jeśli nie zobaczysz odpowiedzi."
+    },
+    "failure": "Nie udało się wysłać wiadomości. Napisz bezpośrednio na {email}.",
+    "privacy": {
+      "note": "Dane z formularza wykorzystam tylko do odpowiedzi na wiadomość.",
+      "toggle": "Jak przetwarzam dane?",
+      "items": {
+        "controller": {
+          "term": "Administrator",
+          "description": "Jakub Wilk (Underwolf Studio), Warszawa. Kontakt przez ten formularz."
+        },
+        "purpose": {
+          "term": "Cel",
+          "description": "Odpowiedź na wiadomość (art. 6 ust. 1 lit. f RODO). Podanie danych jest dobrowolne, ale bez nich nie odpiszę."
+        },
+        "recipients": {
+          "term": "Odbiorcy",
+          "description": "Dostawcy hostingu, automatyzacji, AI i ochrony przed spamem (Cloudflare). Dane mogą trafić poza EOG na podstawie standardowych klauzul umownych."
+        },
+        "retention": {
+          "term": "Przechowywanie",
+          "description": "Do 30 dni od ostatniego kontaktu, chyba że zaczniemy współpracę."
+        },
+        "rights": {
+          "term": "Prawa",
+          "description": "Dostęp, sprostowanie, usunięcie, ograniczenie, sprzeciw, przeniesienie danych i skarga do Prezesa UODO."
+        }
+      }
+    }
+  },
+  "footer": {
+    "copyright": "© {year} Underwolf Studio · Warszawa",
+    "linkedin": "LinkedIn",
+    "newTab": "(otwiera się w nowej karcie)"
+  },
+  "seo": {
+    "servicesTitle": "Usługi",
+    "services": {
+      "documents": {
+        "name": "Automatyzacja obiegu dokumentów",
+        "description": "Automatyczne zbieranie, opisywanie i porządkowanie dokumentów od klientów."
+      },
+      "dataEntry": {
+        "name": "Odczyt danych z dokumentów przez AI",
+        "description": "AI odczytuje faktury, paragony i formularze i przygotowuje dane do importu w innych systemach."
+      },
+      "followUp": {
+        "name": "Automatyczne przypomnienia i follow-upy",
+        "description": "Przypomnienia o dokumentach, terminach, płatnościach i ofertach wysyłane bez ręcznej pracy."
+      },
+      "agents": {
+        "name": "Agenci i asystenci AI",
+        "description": "Agenci AI, którzy czytają dokumenty, odpowiadają na typowe pytania klientów i przekazują trudniejsze sprawy człowiekowi."
+      },
+      "webApps": {
+        "name": "Aplikacje internetowe na zamówienie",
+        "description": "Panele dla klientów, systemy wewnętrzne i MVP budowane w Next.js, React i TypeScript."
+      }
+    }
+  },
+  "notFound": {
+    "title": "Nie ma takiej strony",
+    "body": "Ten adres nie istnieje albo został przeniesiony.",
+    "back": "Wróć na stronę główną"
+  }
+}

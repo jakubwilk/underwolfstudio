@@ -1,29 +1,27 @@
 import { colorsTuple, createTheme } from '@mantine/core';
 
-// Indigo scale built around the site accent: shade 4 is `--accent` (#818cf8)
+// Indigo scale built around the site accent: shade 4 is `--accent` (#7b7cf6)
 // from globals.css, so Mantine components match the logo and favicon.
 const accent = colorsTuple([
-  '#eef2ff',
-  '#e0e7ff',
-  '#c7d2fe',
-  '#a5b4fc',
-  '#818cf8',
-  '#6366f1',
-  '#4f46e5',
-  '#4338ca',
-  '#3730a3',
-  '#312e81',
+  '#eeeeff',
+  '#dcdcfe',
+  '#c4c5fc',
+  '#9d9ef9',
+  '#7b7cf6',
+  '#6667ee',
+  '#5354d9',
+  '#4445b8',
+  '#373894',
+  '#2c2d73',
 ]);
 
 export const theme = createTheme({
-  fontFamily: 'var(--font-space-grotesk), system-ui, sans-serif',
+  fontFamily: 'var(--font-sans), system-ui, sans-serif',
   fontFamilyMonospace: 'var(--font-mono), ui-monospace, monospace',
+  headings: { fontFamily: 'var(--font-sans), system-ui, sans-serif', fontWeight: '600' },
   colors: { accent },
   primaryColor: 'accent',
-  // In dark mode Mantine fills with the primary shade and draws outline,
-  // light and text variants with shade (primary - 4) — so 8 here makes
-  // those use the accent itself, while filled components get a deeper indigo.
-  primaryShade: { light: 4, dark: 8 },
-  // Shade 4 is light, so filled components in light mode get dark text.
-  autoContrast: true,
+  primaryShade: 4,
+  // Filled buttons get their dark text and lighter hover in globals.css.
+  defaultRadius: 6,
 });

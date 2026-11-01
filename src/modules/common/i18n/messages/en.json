@@ -1,0 +1,339 @@
+{
+  "metadata": {
+    "title": "Automation, AI Agents and Web Applications | Underwolf Studio",
+    "description": "I automate repetitive work in businesses and build AI agents and web applications: document handling, data entry, customer service, client portals and internal systems. Connected to the tools you already use. Based in Warsaw, working remotely.",
+    "ogHeadline": "Your business on autopilot"
+  },
+  "nav": {
+    "switchTo": "PL",
+    "switchToLabel": "Wersja polska"
+  },
+  "header": {
+    "ariaLabel": "Main navigation",
+    "links": {
+      "services": "Services",
+      "caseStudies": "Case studies",
+      "process": "How I work",
+      "faq": "FAQ"
+    },
+    "cta": "Book a consultation",
+    "menu": "Menu",
+    "openMenu": "Open menu"
+  },
+  "hero": {
+    "ariaLabel": "Introduction",
+    "eyebrow": "Automation · AI agents · Web applications",
+    "title": "Your business on autopilot",
+    "subtitle": "I automate repetitive work and build AI agents and web applications: from document handling and answers to client questions to custom portals and systems. Connected to the tools you already use.",
+    "cta": "Describe your process",
+    "stats": {
+      "price": {
+        "value": "from {price}",
+        "label": "implementation, net"
+      },
+      "gdpr": {
+        "value": "GDPR",
+        "label": "your data under control"
+      }
+    },
+    "card": {
+      "title": "Expense documents → accounting",
+      "status": "Active",
+      "steps": {
+        "inbox": {
+          "title": "New invoice in the inbox",
+          "tool": "Gmail · PDF attachment"
+        },
+        "extract": {
+          "title": "AI reads the data",
+          "tool": "Tax ID, amounts, dates, line items"
+        },
+        "assign": {
+          "title": "Matched to the client",
+          "tool": "Google Drive · this month's folder"
+        },
+        "export": {
+          "title": "Import file ready",
+          "tool": "Accounting software"
+        },
+        "notify": {
+          "title": "Team notified",
+          "tool": "Slack · #accounting"
+        }
+      }
+    }
+  },
+  "integrations": {
+    "ariaLabel": "Integrations",
+    "label": "Integrations with the tools you already use",
+    "more": "+ more"
+  },
+  "services": {
+    "label": "Services",
+    "ariaLabel": "Services",
+    "title": "What I do",
+    "description": "Automation, AI agents and web applications. I pick the tools to fit the problem, not the other way round.",
+    "pillars": {
+      "automation": {
+        "title": "Process automation",
+        "description": "I connect the software you use so data flows between it on its own and repetitive tasks get done without you.",
+        "examples": "Document handling, reminders, reports, data sync.",
+        "tools": "n8n · APIs · webhooks"
+      },
+      "agents": {
+        "title": "AI agents",
+        "description": "Assistants that read documents, answer clients and make simple decisions, handing harder cases to a person.",
+        "examples": "Invoice reading, inquiry handling, assistants for clients and staff.",
+        "tools": "LangGraph · LLMs · RAG"
+      },
+      "webApps": {
+        "title": "Web applications",
+        "description": "I design and build custom applications: from a simple tool for your team to a full system with a portal for your clients.",
+        "examples": "Client portals, internal systems, MVPs of new products.",
+        "tools": "Next.js · React · TypeScript"
+      }
+    },
+    "industriesTitle": "Typical use cases in your industry",
+    "industriesLabel": "Choose an industry",
+    "industries": {
+      "accounting": {
+        "name": "Accounting firms",
+        "items": {
+          "documents": {
+            "title": "Documents from five channels",
+            "description": "I collect them automatically in one place, sorted by client and month."
+          },
+          "dataEntry": {
+            "title": "Retyping invoices",
+            "description": "AI reads invoices and receipts, and you get data ready to import."
+          },
+          "followUp": {
+            "title": "Chasing missing documents",
+            "description": "Reminders go out on their own, only to clients who haven't sent anything yet."
+          },
+          "questions": {
+            "title": "The same questions",
+            "description": "An assistant answers questions about deadlines and amounts, and passes the harder ones to you."
+          }
+        }
+      },
+      "legal": {
+        "name": "Law firms",
+        "items": {
+          "documents": {
+            "title": "Attachments in the inbox",
+            "description": "Client documents land in the right case automatically, labelled and in order."
+          },
+          "dataEntry": {
+            "title": "Letters from scratch",
+            "description": "Letter and contract templates fill in with client and case data. You review the content."
+          },
+          "followUp": {
+            "title": "Keeping track of deadlines",
+            "description": "Deadlines from letters go into the calendar, and reminders go out well in advance."
+          },
+          "questions": {
+            "title": "“What's happening with my case?”",
+            "description": "Clients get an update automatically whenever something changes in their case."
+          }
+        }
+      },
+      "services": {
+        "name": "Service businesses",
+        "items": {
+          "documents": {
+            "title": "Inquiries from everywhere",
+            "description": "Emails, forms and messages land in one list, sorted by urgency."
+          },
+          "dataEntry": {
+            "title": "Copy-paste between systems",
+            "description": "Data from forms, emails and spreadsheets flows into your CRM and invoices on its own."
+          },
+          "followUp": {
+            "title": "Manual follow-ups",
+            "description": "Reminders about appointments, payments and quotes go out on their own."
+          },
+          "questions": {
+            "title": "The same questions",
+            "description": "An AI assistant answers common questions about your offer, prices and availability."
+          }
+        }
+      }
+    }
+  },
+  "caseStudies": {
+    "label": "Case studies",
+    "ariaLabel": "Case studies",
+    "title": "Running in my own business",
+    "description": "The automation that handles inquiries sent through the form on this page.",
+    "columns": {
+      "process": "Process",
+      "before": "Before",
+      "after": "After"
+    },
+    "badges": {
+      "own": "In-house"
+    },
+    "items": {
+      "inquiries": {
+        "title": "Handling website inquiries",
+        "problem": "Every inquiry has to be read, assessed and answered.",
+        "effect": "AI classifies the inquiry and filters out spam, saves it to a database, notifies me and sends a personalised reply right away.",
+        "result": ""
+      }
+    }
+  },
+  "process": {
+    "label": "Working together",
+    "ariaLabel": "How I work",
+    "title": "How I work",
+    "priceLabel": "Implementation",
+    "price": "from {price} net",
+    "priceNote": "The price depends on the number of systems, data volume, use of AI and the scope of the application.",
+    "step": "Step {number}",
+    "steps": {
+      "message": {
+        "title": "Message",
+        "description": "Describe in a few sentences what takes up most of your time."
+      },
+      "analysis": {
+        "title": "Analysis and quote",
+        "description": "I look at how the process works today, and you get a concrete proposal with a price."
+      },
+      "build": {
+        "title": "Implementation",
+        "description": "I build and test the solution on your data without disrupting your work."
+      },
+      "support": {
+        "title": "Support",
+        "description": "I keep it running and extend it as your business grows."
+      }
+    }
+  },
+  "faq": {
+    "label": "FAQ",
+    "ariaLabel": "Frequently asked questions",
+    "title": "Frequently asked questions",
+    "intro": "Can't find your question? <link>Write to me directly</link> and I'll reply as soon as I can.",
+    "items": {
+      "gdpr": {
+        "question": "What about GDPR?",
+        "answer": "We sign a data processing agreement. The automation processes only the data needed for the task, and I choose tools that keep the data in the European Union. Where AI isn't needed, the data never reaches it."
+      },
+      "security": {
+        "question": "Is my data safe?",
+        "answer": "I pick the tools for the job, e.g. n8n for process automation or LangGraph for AI agents. Everything can run on your own server or on a dedicated server in the EU rather than a shared service. I only get access to your systems to the extent the automation needs, and I choose AI providers that don't train models on data sent through their API."
+      },
+      "integrations": {
+        "question": "Will it work with the software I use?",
+        "answer": "Usually, yes. I connect to software through APIs or file imports, as well as to email, Google Workspace, Microsoft 365, spreadsheets, CRMs and messaging apps. During the analysis I check what can be connected in your case before quoting anything."
+      },
+      "webApps": {
+        "question": "What kind of web applications do you build?",
+        "answer": "Custom applications: client portals, internal systems for handling orders or requests, and first versions (MVPs) of new products. I build them with Next.js, React and TypeScript, and after launch I can take care of hosting and maintenance. If the application is meant to work with automations or AI agents, I design it as one whole from the start."
+      },
+      "failure": {
+        "question": "What if something stops working?",
+        "answer": "The automation reports errors immediately, so I usually know about a problem before you do. As part of support I fix issues and adjust the workflow when, for example, your software or document format changes. Important processes also have a fallback."
+      },
+      "duration": {
+        "question": "How long does implementation take?",
+        "answer": "A simple automation, such as reminders, usually goes live in 1–2 weeks. Solutions that use AI to read documents and connect several systems take longer, and I build applications in stages so the first version works as soon as possible. You get an exact timeline together with the quote."
+      },
+      "technical": {
+        "question": "Do I need to be technical?",
+        "answer": "No. Just tell me how work in your business looks today. I take care of the technical side, and at the end I show you how to use the solution."
+      }
+    }
+  },
+  "contact": {
+    "label": "Contact",
+    "ariaLabel": "Contact",
+    "title": "Tell me what takes up most of your time",
+    "subtitle": "I'll reply with questions or a first proposal. No commitment.",
+    "form": {
+      "name": "Name",
+      "namePlaceholder": "What should I call you?",
+      "email": "Email",
+      "emailPlaceholder": "you@yourcompany.com",
+      "message": "How can I help?",
+      "messagePlaceholder": "E.g. clients send documents to different addresses and every month I lose a day collecting them.",
+      "honeypot": "Leave this field empty",
+      "submit": "Send message"
+    },
+    "errors": {
+      "nameRequired": "Please enter your name",
+      "nameTooLong": "Your name is too long",
+      "emailInvalid": "Please enter a valid email address",
+      "messageTooShort": "Please write a few more words",
+      "messageTooLong": "Your message is too long",
+      "verification": "Please wait for the spam check to finish"
+    },
+    "success": {
+      "title": "Thank you, your message has arrived",
+      "body": "I'll reply to the email address you provided. Check your spam folder too if you don't see my reply."
+    },
+    "failure": "Your message couldn't be sent. Please write directly to {email}.",
+    "privacy": {
+      "note": "I'll use the details from this form only to reply to your message.",
+      "toggle": "How I process your data",
+      "items": {
+        "controller": {
+          "term": "Controller",
+          "description": "Jakub Wilk (Underwolf Studio), Warsaw. Contact through this form."
+        },
+        "purpose": {
+          "term": "Purpose",
+          "description": "Replying to your message (Art. 6(1)(f) GDPR). Providing your data is voluntary, but I can't reply without it."
+        },
+        "recipients": {
+          "term": "Recipients",
+          "description": "Providers of hosting, automation, AI and spam protection (Cloudflare). Data may be transferred outside the EEA under standard contractual clauses."
+        },
+        "retention": {
+          "term": "Retention",
+          "description": "Up to 30 days after our last contact, unless we start working together."
+        },
+        "rights": {
+          "term": "Rights",
+          "description": "Access, rectification, erasure, restriction, objection, portability and a complaint to the President of the Polish Data Protection Office (UODO)."
+        }
+      }
+    }
+  },
+  "footer": {
+    "copyright": "© {year} Underwolf Studio · Warsaw",
+    "linkedin": "LinkedIn",
+    "newTab": "(opens in a new tab)"
+  },
+  "seo": {
+    "servicesTitle": "Services",
+    "services": {
+      "documents": {
+        "name": "Document workflow automation",
+        "description": "Automatic collection, labelling and filing of documents from clients."
+      },
+      "dataEntry": {
+        "name": "AI data extraction from documents",
+        "description": "AI reads invoices, receipts and forms and prepares the data for import into other systems."
+      },
+      "followUp": {
+        "name": "Automated reminders and follow-ups",
+        "description": "Reminders about documents, deadlines, payments and quotes sent without manual work."
+      },
+      "agents": {
+        "name": "AI agents and assistants",
+        "description": "AI agents that read documents, answer common client questions and hand harder cases to a person."
+      },
+      "webApps": {
+        "name": "Custom web applications",
+        "description": "Client portals, internal systems and MVPs built with Next.js, React and TypeScript."
+      }
+    }
+  },
+  "notFound": {
+    "title": "Page not found",
+    "body": "This address doesn't exist or has moved.",
+    "back": "Back to the home page"
+  }
+}
