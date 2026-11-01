@@ -1,36 +1,38 @@
+import { MESSAGES } from '@/modules/common/i18n/messages';
+import type { AppLocale } from '@/modules/common/i18n/routing';
 import {
   BRAND_LOGO_MARK,
+  CONTACT_EMAIL,
   FOUNDER_NAME,
   LINKEDIN_URL,
-  SITE_DESCRIPTION,
   SITE_NAME,
   SITE_URL,
 } from '@/modules/common/utils/site';
 
-import { SERVICES } from './services';
+import { CASE_STUDIES } from './caseStudies';
+import { PRICE_FROM_PLN } from './pricing';
+import { INDUSTRY_KEYS, SEO_SERVICE_KEYS } from './services';
 
 // Plain-language facts shared by the JSON-LD and llms.txt, so search engines
-// and LLMs get the same, consistent description of the studio.
+// and LLMs get the same, consistent description of the studio. Texts come
+// from the page messages, so they never drift from what visitors read.
 const LOCATION = 'Warsaw, Poland';
 const FOUNDED = '2026';
-
-const INTEGRATIONS = [
-  'Google Workspace',
-  'Google Drive',
-  'REST APIs',
-  'Webhooks',
-  'SMTP email',
-  'Slack',
-  'Discord',
-  'SAP and other ERP systems',
-  'PostgreSQL',
-  'Redis',
-] as const;
 
 const ORGANIZATION_ID = `${SITE_URL}/#organization`;
 const FOUNDER_ID = `${SITE_URL}/#founder`;
 
-export function buildJsonLd() {
+// What the studio offers: the automations from the page plus AI agents and
+// web applications, described as services.
+function services(locale: AppLocale) {
+  const { services } = MESSAGES[locale].seo;
+  return SEO_SERVICE_KEYS.map((key) => services[key]);
+}
+
+export function buildJsonLd(locale: AppLocale) {
+  const messages = MESSAGES[locale];
+  const offered = services(locale);
+
   return {
     '@context': 'https://schema.org',
     '@graph': [
@@ -40,7 +42,8 @@ export function buildJsonLd() {
         name: SITE_NAME,
         url: SITE_URL,
         logo: `${SITE_URL}${BRAND_LOGO_MARK}`,
-        description: SITE_DESCRIPTION,
+        description: messages.metadata.description,
+        email: CONTACT_EMAIL,
         foundingDate: FOUNDED,
         founder: { '@id': FOUNDER_ID },
         address: {
@@ -48,13 +51,14 @@ export function buildJsonLd() {
           addressLocality: 'Warsaw',
           addressCountry: 'PL',
         },
-        knowsAbout: [...SERVICES.map(({ title }) => title), ...INTEGRATIONS],
+        areaServed: 'PL',
+        knowsAbout: [...offered.map(({ name }) => name), 'n8n', 'LangGraph', 'Next.js', 'KSeF'],
         hasOfferCatalog: {
           '@type': 'OfferCatalog',
-          name: 'Services',
-          itemListElement: SERVICES.map(({ title, description }) => ({
+          name: messages.seo.servicesTitle,
+          itemListElement: offered.map(({ name, description }) => ({
             '@type': 'Offer',
-            itemOffered: { '@type': 'Service', name: title, description },
+            itemOffered: { '@type': 'Service', name, description },
           })),
         },
       },
@@ -70,6 +74,7 @@ export function buildJsonLd() {
         '@type': 'WebSite',
         name: SITE_NAME,
         url: SITE_URL,
+        inLanguage: locale,
         publisher: { '@id': ORGANIZATION_ID },
       },
     ],
@@ -81,27 +86,37 @@ export function serializeJsonLd(data: object) {
   return JSON.stringify(data).replace(/</g, '\\u003c');
 }
 
-// https://llmstxt.org — a Markdown summary of the site for LLMs.
+// https://llmstxt.org — a Markdown summary of the site for LLMs, in English.
 export function buildLlmsTxt() {
+  const { metadata, services: offer, caseStudies, process } = MESSAGES.en;
+
   return [
     `# ${SITE_NAME}`,
     '',
-    `> ${SITE_DESCRIPTION}`,
+    `> ${metadata.description}`,
     '',
-    `${SITE_NAME} is a software studio based in ${LOCATION}, founded in ${FOUNDED} by ${FOUNDER_NAME}. It designs and builds AI-first products: autonomous AI agents, AI workflow automation that connects language models with business systems, and fullstack and frontend web applications.`,
+    `${SITE_NAME} is a one-person studio based in ${LOCATION}, founded in ${FOUNDED} by ${FOUNDER_NAME}. It automates repetitive work in businesses such as ${INDUSTRY_KEYS.map((key) => offer.industries[key].name.toLowerCase()).join(', ')} with n8n workflows and AI, builds AI agents, and develops custom web applications. The site is in Polish (${SITE_URL}/) with an English version (${SITE_URL}/en).`,
     '',
     '## Services',
     '',
-    ...SERVICES.map(({ title, description }) => `- **${title}**: ${description}`),
+    ...services('en').map(({ name, description }) => `- **${name}**: ${description}`),
     '',
-    '## Integrations',
+    '## Case studies',
     '',
-    `Workflows and agents connect to: ${INTEGRATIONS.join(', ')}, and other systems on request.`,
+    ...CASE_STUDIES.map((key) => {
+      const study = caseStudies.items[key];
+      return `- **${study.title}** (in use at ${SITE_NAME}): ${study.problem} ${study.effect}`;
+    }),
+    '',
+    '## Pricing',
+    '',
+    `Automations start at PLN ${PRICE_FROM_PLN.toLocaleString('en-US')} net. ${process.priceNote}`,
     '',
     '## Contact',
     '',
-    `- [${FOUNDER_NAME} on LinkedIn](${LINKEDIN_URL}): the way to start a collaboration`,
-    `- [Website](${SITE_URL}/)`,
+    `- [Email](mailto:${CONTACT_EMAIL}): the way to start a collaboration`,
+    `- [Contact form](${SITE_URL}/en#contact)`,
+    `- [${FOUNDER_NAME} on LinkedIn](${LINKEDIN_URL})`,
     '',
   ].join('\n');
 }

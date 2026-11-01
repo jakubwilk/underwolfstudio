@@ -5,19 +5,17 @@ import { render, screen } from '@/test/render';
 import { ContactSection } from './ContactSection';
 
 describe('ContactSection', () => {
-  it('renders a labelled section with a heading', () => {
+  it('renders a labelled section the hero can link to', () => {
     render(<ContactSection />);
-    const section = screen.getByRole('region', { name: 'Contact' });
+    const section = screen.getByRole('region', { name: 'Kontakt' });
+    expect(section).toHaveAttribute('id', 'contact');
     expect(section).toContainElement(
-      screen.getByRole('heading', { level: 2, name: "Let's work together" }),
+      screen.getByRole('heading', { level: 2, name: 'Napisz, co zajmuje Ci najwięcej czasu' }),
     );
   });
 
-  it('links to the LinkedIn profile in a new tab', () => {
+  it('contains the contact form', () => {
     render(<ContactSection />);
-    const link = screen.getByRole('link', { name: /Connect on LinkedIn \(opens in a new tab\)/ });
-    expect(link).toHaveAttribute('href', 'https://www.linkedin.com/in/jakub-wilk/');
-    expect(link).toHaveAttribute('target', '_blank');
-    expect(link).toHaveAttribute('rel', 'noopener noreferrer');
+    expect(screen.getByRole('button', { name: 'Wyślij wiadomość' })).toBeInTheDocument();
   });
 });

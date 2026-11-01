@@ -1,27 +1,17 @@
-// Shared by the services section, structured data and llms.txt.
-export const SERVICES = [
-  {
-    title: 'AI Agents',
-    description:
-      'Autonomous agents that research, decide, and act — handling complex tasks with minimal human oversight.',
-    accent: true,
-  },
-  {
-    title: 'AI Workflows',
-    description:
-      'Automated multi-step pipelines connecting language models, APIs, and data sources into reliable production systems.',
-    accent: true,
-  },
-  {
-    title: 'Fullstack Web Application',
-    description:
-      'End-to-end web applications built for scale — from database schema to polished UI, with long-term maintainability in mind.',
-    accent: false,
-  },
-  {
-    title: 'Frontend Application',
-    description:
-      'Fast, accessible interfaces with attention to detail — React, Next.js, smooth interactions, and pixel-perfect execution.',
-    accent: false,
-  },
+// Keys of `services.pillars` and `services.industries` in the messages, in
+// display order. Every industry has the same four problems.
+export const PILLAR_KEYS = ['automation', 'agents', 'webApps'] as const;
+export const INDUSTRY_KEYS = ['accounting', 'legal', 'services'] as const;
+export const PROBLEM_KEYS = ['documents', 'dataEntry', 'followUp', 'questions'] as const;
+
+export type PillarKey = (typeof PILLAR_KEYS)[number];
+export type IndustryKey = (typeof INDUSTRY_KEYS)[number];
+
+// Services described in the JSON-LD and llms.txt (`seo.services`).
+export const SEO_SERVICE_KEYS = [
+  'documents',
+  'dataEntry',
+  'followUp',
+  'agents',
+  'webApps',
 ] as const;
