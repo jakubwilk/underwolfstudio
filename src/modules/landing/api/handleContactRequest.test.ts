@@ -31,6 +31,7 @@ describe('handleContactRequest', () => {
     vi.stubEnv('CONTACT_WEBHOOK_URL', WEBHOOK);
     vi.stubEnv('CONTACT_WEBHOOK_SECRET', 's3cret');
     vi.stubEnv('TURNSTILE_SECRET_KEY', '');
+    vi.stubEnv('NEXT_PUBLIC_TURNSTILE_SITE_KEY', '');
     vi.spyOn(console, 'error').mockImplementation(() => {});
   });
 

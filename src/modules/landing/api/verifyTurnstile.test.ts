@@ -16,10 +16,21 @@ describe('verifyTurnstile', () => {
     vi.unstubAllEnvs();
   });
 
-  it('is skipped without a secret key', async () => {
+  it('is skipped when Turnstile is off', async () => {
     vi.stubEnv('TURNSTILE_SECRET_KEY', '');
+    vi.stubEnv('NEXT_PUBLIC_TURNSTILE_SITE_KEY', '');
     expect(await verifyTurnstile('', null)).toBe('skipped');
     expect(fetchMock).not.toHaveBeenCalled();
+  });
+
+  it('fails when the widget is on but the secret key is missing', async () => {
+    const error = vi.spyOn(console, 'error').mockImplementation(() => {});
+    vi.stubEnv('TURNSTILE_SECRET_KEY', '');
+    vi.stubEnv('NEXT_PUBLIC_TURNSTILE_SITE_KEY', 'site-key');
+    expect(await verifyTurnstile('token', null)).toBe('failed');
+    expect(fetchMock).not.toHaveBeenCalled();
+    expect(error).toHaveBeenCalledWith(expect.stringContaining('TURNSTILE_SECRET_KEY'));
+    error.mockRestore();
   });
 
   it('fails a missing token without asking Cloudflare', async () => {
