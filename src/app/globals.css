@@ -1,15 +1,24 @@
 @import 'tailwindcss';
 
 :root {
-  --bg: #08080f;
-  --bg-alt: #16161f;
-  --bg-canvas: #0f0f17;
-  --text-primary: #ffffff;
-  --text-secondary: rgba(255, 255, 255, 0.65);
-  --text-tertiary: rgba(255, 255, 255, 0.5);
-  --border-subtle: rgba(255, 255, 255, 0.08);
-  --border-strong: rgba(255, 255, 255, 0.18);
-  --accent: #818cf8;
+  --bg: #0b0c11;
+  --bg-alt: #0e0f15;
+  --bg-card: #12131a;
+  --bg-cell: #0f1016;
+  --bg-raised: #16171f;
+  --bg-footer: #08090d;
+  --text-primary: #ececf1;
+  --text-label: #c9cad6;
+  --text-nav: #b4b5c4;
+  --text-secondary: #a9aabb;
+  --text-tertiary: #8a8b9c;
+  --text-muted: #6d6e80;
+  --border-subtle: #1d1e28;
+  --border: #23242f;
+  --border-strong: #2c2d3a;
+  --accent: #7b7cf6;
+  --accent-light: #9d9ef9;
+  --accent-hover: #9293f8;
 }
 
 @theme inline {
@@ -19,16 +28,28 @@
 
 html,
 body {
-  height: 100%;
   margin: 0;
   padding: 0;
 }
 
+html {
+  scroll-behavior: smooth;
+}
+
 body {
+  min-height: 100%;
   background: var(--bg);
   color: var(--text-primary);
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
+}
+
+/* Filled buttons: the accent with dark text, lightening on hover. Mantine sets
+   these variables inline, hence !important; the theme can't, since it is
+   passed from a server component and can't hold a function. */
+.mantine-Button-root[data-variant='filled'] {
+  --button-color: var(--bg) !important;
+  --button-hover: var(--accent-hover) !important;
 }
 
 /* ── Keyframes ── */
@@ -44,44 +65,44 @@ body {
   }
 }
 
-/* Workflow "execution": every element runs the same 10s cycle, offset by an
-   inline animation-delay, so the nodes light up in order and fade together. */
-@keyframes flow-draw {
-  0% {
-    stroke-dashoffset: 1;
-    opacity: 1;
+/* Hero workflow card: each step lights up in turn, offset by an inline
+   animation-delay, so the run moves down the list and starts over. */
+@keyframes step-glow {
+  0%,
+  100% {
+    background-color: transparent;
   }
   6%,
-  45% {
-    stroke-dashoffset: 0;
-    opacity: 1;
+  16% {
+    background-color: rgb(123 124 246 / 0.07);
   }
-  55%,
-  100% {
-    stroke-dashoffset: 0;
-    opacity: 0;
+  26% {
+    background-color: transparent;
   }
 }
 
-@keyframes flow-fade {
-  0% {
-    opacity: 0;
+@keyframes step-mark {
+  0%,
+  100% {
+    border-color: var(--border-strong);
   }
   6%,
-  45% {
-    opacity: 1;
+  16% {
+    border-color: var(--accent);
   }
-  55%,
-  100% {
-    opacity: 0;
+  26% {
+    border-color: var(--border-strong);
   }
 }
 
-/* ── Background utilities ── */
-
-@utility bg-dot-grid {
-  background-image: radial-gradient(circle, var(--border-subtle) 1px, transparent 1px);
-  background-size: 28px 28px;
+@keyframes pulse-dot {
+  0%,
+  100% {
+    box-shadow: 0 0 0 0 rgb(123 124 246 / 0.6);
+  }
+  70% {
+    box-shadow: 0 0 0 6px rgb(123 124 246 / 0);
+  }
 }
 
 /* ── Animation utilities ── */
@@ -94,28 +115,23 @@ body {
   animation: fade-up 0.6s ease 0.3s both;
 }
 
-@utility animate-fade-up-5 {
-  animation: fade-up 0.6s ease 0.5s both;
+@utility animate-step-glow {
+  animation: step-glow 7.5s ease-in-out infinite both;
 }
 
-@utility animate-fade-up-7 {
-  animation: fade-up 0.6s ease 0.7s both;
+@utility animate-step-mark {
+  animation: step-mark 7.5s ease-in-out infinite both;
 }
 
-@utility animate-fade-up-9 {
-  animation: fade-up 0.6s ease 0.9s both;
-}
-
-/* Without animation these show their lit state. */
-@utility animate-flow-draw {
-  animation: flow-draw 10s ease-out infinite both;
-}
-
-@utility animate-flow-fade {
-  animation: flow-fade 10s ease-out infinite both;
+@utility animate-pulse-dot {
+  animation: pulse-dot 2s ease-out infinite;
 }
 
 @media (prefers-reduced-motion: reduce) {
+  html {
+    scroll-behavior: auto;
+  }
+
   *,
   ::before,
   ::after {
@@ -123,8 +139,9 @@ body {
     animation-delay: 0ms !important;
   }
 
-  .animate-flow-draw,
-  .animate-flow-fade {
+  .animate-step-glow,
+  .animate-step-mark,
+  .animate-pulse-dot {
     animation: none !important;
   }
 }
