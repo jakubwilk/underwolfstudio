@@ -4,9 +4,6 @@ import { render, screen, within } from '@/test/render';
 
 import { ProcessSection } from './ProcessSection';
 
-// Intl separates thousands and currency with non-breaking spaces.
-const normalize = (text: string | null) => text?.replace(/\s/g, ' ');
-
 describe('ProcessSection', () => {
   it('lists the four numbered steps in order', () => {
     render(<ProcessSection />);
@@ -20,14 +17,14 @@ describe('ProcessSection', () => {
     expect(within(section).getByText('Krok 01')).toBeInTheDocument();
   });
 
-  it('shows the starting price next to the heading', () => {
+  it('shows individual pricing next to the heading', () => {
     render(<ProcessSection />);
-    expect(normalize(screen.getByText(/^od .* netto$/).textContent)).toBe('od 3 000 zł netto');
+    expect(screen.getByText('Indywidualna cena')).toBeInTheDocument();
     expect(screen.getByText(/^Cena zależy od liczby systemów/)).toBeInTheDocument();
   });
 
-  it('formats the price for English', () => {
+  it('shows the pricing in English', () => {
     render(<ProcessSection />, { locale: 'en' });
-    expect(normalize(screen.getByText(/^from PLN/).textContent)).toBe('from PLN 3,000 net');
+    expect(screen.getByText('Custom pricing')).toBeInTheDocument();
   });
 });

@@ -1,17 +1,14 @@
 import { Box, Button, Group, Stack, Text, Title } from '@mantine/core';
 import { IconArrowRight } from '@tabler/icons-react';
-import { useFormatter, useTranslations } from 'next-intl';
+import { useTranslations } from 'next-intl';
 
 import { HeroWorkflowCard } from './HeroWorkflowCard';
-import { PRICE_FORMAT, PRICE_FROM_PLN } from '../utils/pricing';
 import { BUTTON_FZ, EYEBROW, EYEBROW_CLASS, LEAD, LEAD_CLASS } from '../utils/typography';
 
 const STAT_KEYS = ['price', 'gdpr'] as const;
 
 export function HeroSection() {
   const t = useTranslations('hero');
-  const format = useFormatter();
-  const price = format.number(PRICE_FROM_PLN, PRICE_FORMAT);
 
   return (
     <Box
@@ -67,7 +64,7 @@ export function HeroSection() {
                   {t(`stats.${key}.label`)}
                 </Box>
                 <Box component="dd" className="m-0 text-[20px] font-semibold text-(--text-primary)">
-                  {t(`stats.${key}.value`, { price })}
+                  {t(`stats.${key}.value`)}
                 </Box>
               </Box>
             ))}

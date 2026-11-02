@@ -1,17 +1,15 @@
 import { Box, Stack, Text } from '@mantine/core';
-import { useFormatter, useTranslations } from 'next-intl';
+import { useTranslations } from 'next-intl';
 
 import { Section } from './Section';
 import { SectionHeader } from './SectionHeader';
-import { PRICE_FORMAT, PRICE_FROM_PLN } from '../utils/pricing';
 import { BODY, BODY_CLASS, H3, H3_CLASS, META, META_CLASS } from '../utils/typography';
 
 const STEP_KEYS = ['message', 'analysis', 'build', 'support'] as const;
 
-// The four steps of working together, with the starting price beside the heading.
+// The four steps of working together, with the pricing note beside the heading.
 export function ProcessSection() {
   const t = useTranslations('process');
-  const format = useFormatter();
 
   const priceBox = (
     <Box className="flex flex-col gap-3 sm:flex-row sm:items-center sm:gap-5 rounded-[10px] border border-(--border-strong) bg-(--bg-card) px-6 py-4.5">
@@ -20,7 +18,7 @@ export function ProcessSection() {
           {t('priceLabel')}
         </Text>
         <Text fz={24} fw={600} className="m-0 whitespace-nowrap text-(--accent-light)">
-          {t('price', { price: format.number(PRICE_FROM_PLN, PRICE_FORMAT) })}
+          {t('price')}
         </Text>
       </Stack>
       <Box aria-hidden="true" className="hidden sm:block w-px self-stretch bg-(--border-strong)" />

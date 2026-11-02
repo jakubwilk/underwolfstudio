@@ -4,9 +4,6 @@ import { render, screen } from '@/test/render';
 
 import { HeroSection } from './HeroSection';
 
-// Intl separates thousands and currency with non-breaking spaces.
-const normalize = (text: string | null) => text?.replace(/\s/g, ' ');
-
 describe('HeroSection', () => {
   it('renders the outcome as the main heading in the section the logo links to', () => {
     render(<HeroSection />);
@@ -36,10 +33,10 @@ describe('HeroSection', () => {
     expect(cta).toHaveAttribute('data-umami-event', 'cta_click');
   });
 
-  it('shows the starting price and GDPR as key facts', () => {
+  it('shows individual pricing and GDPR as key facts', () => {
     render(<HeroSection />);
-    const values = screen.getAllByRole('definition').map((value) => normalize(value.textContent));
-    expect(values).toEqual(['od 3 000 zł', 'RODO']);
+    const values = screen.getAllByRole('definition').map((value) => value.textContent);
+    expect(values).toEqual(['Indywidualna cena', 'RODO']);
   });
 
   it('shows the example workflow', () => {
