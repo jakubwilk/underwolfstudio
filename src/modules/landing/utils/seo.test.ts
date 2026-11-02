@@ -62,7 +62,7 @@ describe('buildLlmsTxt', () => {
     expect(text).toContain('accounting firms, law firms, service businesses');
     expect(text).toContain('**Handling website inquiries** (in use at Underwolf Studio)');
     expect(text).not.toMatch(/demo/i);
-    expect(text).toContain('PLN 3,000 net');
+    expect(text).toContain('Every implementation is priced individually.');
     expect(text).toContain('(mailto:biznes@underwolfstudio.com)');
     expect(text).toContain('(https://www.linkedin.com/in/jakub-wilk/)');
   });

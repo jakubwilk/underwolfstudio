@@ -10,7 +10,6 @@ import {
 } from '@/modules/common/utils/site';
 
 import { CASE_STUDIES } from './caseStudies';
-import { PRICE_FROM_PLN } from './pricing';
 import { INDUSTRY_KEYS, SEO_SERVICE_KEYS } from './services';
 
 // Plain-language facts shared by the JSON-LD and llms.txt, so search engines
@@ -110,7 +109,7 @@ export function buildLlmsTxt() {
     '',
     '## Pricing',
     '',
-    `Automations start at PLN ${PRICE_FROM_PLN.toLocaleString('en-US')} net. ${process.priceNote}`,
+    `Every implementation is priced individually. ${process.priceNote}`,
     '',
     '## Contact',
     '',
