@@ -28,8 +28,8 @@
     "cta": "Opisz swój proces",
     "stats": {
       "price": {
-        "value": "od {price}",
-        "label": "wdrożenie netto"
+        "value": "Indywidualna cena",
+        "label": "dla każdego wdrożenia"
       },
       "gdpr": {
         "value": "RODO",
@@ -188,7 +188,7 @@
     "ariaLabel": "Jak pracuję",
     "title": "Jak pracuję",
     "priceLabel": "Wdrożenie",
-    "price": "od {price} netto",
+    "price": "Indywidualna cena",
     "priceNote": "Cena zależy od liczby systemów, wolumenu danych, użycia AI i zakresu aplikacji.",
     "step": "Krok {number}",
     "steps": {

@@ -28,8 +28,8 @@
     "cta": "Describe your process",
     "stats": {
       "price": {
-        "value": "from {price}",
-        "label": "implementation, net"
+        "value": "Custom pricing",
+        "label": "for every implementation"
       },
       "gdpr": {
         "value": "GDPR",
@@ -188,7 +188,7 @@
     "ariaLabel": "How I work",
     "title": "How I work",
     "priceLabel": "Implementation",
-    "price": "from {price} net",
+    "price": "Custom pricing",
     "priceNote": "The price depends on the number of systems, data volume, use of AI and the scope of the application.",
     "step": "Step {number}",
     "steps": {
