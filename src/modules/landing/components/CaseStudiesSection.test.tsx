@@ -6,18 +6,18 @@ import { render, screen, within } from '@/test/render';
 import { CaseStudiesSection } from './CaseStudiesSection';
 
 describe('CaseStudiesSection', () => {
-  it('shows the deployment running in my own business', () => {
+  it('shows the deployment running on this site', () => {
     render(<CaseStudiesSection />);
     const section = screen.getByRole('region', { name: 'Realizacje' });
     expect(section).toHaveAttribute('id', 'case-studies');
     expect(within(section).getByRole('heading', { level: 2 })).toHaveTextContent(
-      'Wdrożenie we własnej firmie',
+      'Jak to działa w praktyce',
     );
     expect(within(section).getAllByRole('listitem')).toHaveLength(1);
     expect(
-      within(section).getByRole('heading', { level: 3, name: 'Obsługa zapytań ze strony' }),
+      within(section).getByRole('heading', { level: 3, name: 'Obsługa zapytań od klientów' }),
     ).toBeInTheDocument();
-    expect(within(section).getByText('Wdrożenie własne')).toBeInTheDocument();
+    expect(within(section).getByText('Działa na tej stronie')).toBeInTheDocument();
   });
 
   it('lists only real deployments, with no demo projects', () => {
@@ -30,7 +30,7 @@ describe('CaseStudiesSection', () => {
     render(<CaseStudiesSection />);
     const study = screen.getByRole('listitem');
     expect(within(study).getByText('Przed').nextElementSibling).toHaveTextContent(
-      'trzeba przeczytać, ocenić',
+      'musi przeczytać, ocenić',
     );
     expect(within(study).getByText('Po').nextElementSibling).toHaveTextContent(
       'AI klasyfikuje zapytanie',

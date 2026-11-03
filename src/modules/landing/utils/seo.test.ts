@@ -60,7 +60,7 @@ describe('buildLlmsTxt', () => {
     expect(text).toContain('**Automated reminders and follow-ups**');
     expect(text).toContain('**Custom web applications**');
     expect(text).toContain('accounting firms, law firms, service businesses');
-    expect(text).toContain('**Handling website inquiries** (in use at Underwolf Studio)');
+    expect(text).toContain('**Handling customer inquiries** (in use at Underwolf Studio)');
     expect(text).not.toMatch(/demo/i);
     expect(text).toContain('Every implementation is priced individually.');
     expect(text).toContain('(mailto:biznes@underwolfstudio.com)');
