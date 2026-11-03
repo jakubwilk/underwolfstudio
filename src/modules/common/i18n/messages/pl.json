@@ -222,7 +222,7 @@
       },
       "security": {
         "question": "Czy moje dane są bezpieczne?",
-        "answer": "Narzędzia dobieram do zadania, np. n8n do automatyzacji procesów albo LangGraph do agentów AI. Wszystko może działać na Twoim serwerze albo na dedykowanym serwerze w UE, a nie we wspólnym serwisie. Dostęp do Twoich systemów dostaję tylko w zakresie potrzebnym do automatyzacji, a dostawców AI wybieram spośród tych, którzy nie trenują modeli na danych przesyłanych przez API."
+        "answer": "Narzędzia dobieram do zadania, np. n8n do automatyzacji procesów albo LangGraph do agentów AI. Wszystko działa na Twojej infrastrukturze — Twoim serwerze albo serwerze w UE, który wynajmujesz — a nie we wspólnym serwisie. Dostęp do Twoich systemów dostaję tylko w zakresie potrzebnym do automatyzacji, a dostawców AI wybieram spośród tych, którzy nie trenują modeli na danych przesyłanych przez API."
       },
       "integrations": {
         "question": "Czy to zadziała z programami, których używam?",
@@ -230,7 +230,7 @@
       },
       "webApps": {
         "question": "Jakie aplikacje internetowe robisz?",
-        "answer": "Aplikacje szyte na miarę: panele dla klientów, systemy wewnętrzne do obsługi zamówień czy zgłoszeń oraz pierwsze wersje (MVP) nowych produktów. Buduję je w Next.js, React i TypeScript, a po wdrożeniu mogę zająć się hostingiem i utrzymaniem. Jeśli aplikacja ma współpracować z automatyzacjami albo agentami AI, od początku projektuję to jako całość."
+        "answer": "Aplikacje szyte na miarę: panele dla klientów, systemy wewnętrzne do obsługi zamówień czy zgłoszeń oraz pierwsze wersje (MVP) nowych produktów. Buduję je w Next.js, React i TypeScript i wdrażam na Twojej infrastrukturze — serwer lub konto u dostawcy chmury zapewniasz Ty, a ja pomagam dobrać odpowiednie. Jeśli aplikacja ma współpracować z automatyzacjami albo agentami AI, od początku projektuję to jako całość."
       },
       "failure": {
         "question": "Co, jeśli coś przestanie działać?",

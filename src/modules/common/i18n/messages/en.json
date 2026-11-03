@@ -222,7 +222,7 @@
       },
       "security": {
         "question": "Is my data safe?",
-        "answer": "I pick the tools for the job, e.g. n8n for process automation or LangGraph for AI agents. Everything can run on your own server or on a dedicated server in the EU rather than a shared service. I only get access to your systems to the extent the automation needs, and I choose AI providers that don't train models on data sent through their API."
+        "answer": "I pick the tools for the job, e.g. n8n for process automation or LangGraph for AI agents. Everything runs on your own infrastructure — your server or one you rent in the EU — rather than a shared service. I only get access to your systems to the extent the automation needs, and I choose AI providers that don't train models on data sent through their API."
       },
       "integrations": {
         "question": "Will it work with the software I use?",
@@ -230,7 +230,7 @@
       },
       "webApps": {
         "question": "What kind of web applications do you build?",
-        "answer": "Custom applications: client portals, internal systems for handling orders or requests, and first versions (MVPs) of new products. I build them with Next.js, React and TypeScript, and after launch I can take care of hosting and maintenance. If the application is meant to work with automations or AI agents, I design it as one whole from the start."
+        "answer": "Custom applications: client portals, internal systems for handling orders or requests, and first versions (MVPs) of new products. I build them with Next.js, React and TypeScript and deploy them on your infrastructure — you provide the server or cloud account, and I help you choose the right one. If the application is meant to work with automations or AI agents, I design it as one whole from the start."
       },
       "failure": {
         "question": "What if something stops working?",
