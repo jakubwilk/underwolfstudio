@@ -164,21 +164,21 @@
   "caseStudies": {
     "label": "Realizacje",
     "ariaLabel": "Realizacje",
-    "title": "Wdrożenie we własnej firmie",
-    "description": "Automatyzacja, która obsługuje zapytania wysłane przez formularz na tej stronie.",
+    "title": "Jak to działa w praktyce",
+    "description": "Automatyzacja, którą mogę wdrożyć także w Twojej firmie. Ta wersja obsługuje formularz kontaktowy na tej stronie, więc możesz ją sprawdzić, wysyłając wiadomość.",
     "columns": {
       "process": "Proces",
       "before": "Przed",
       "after": "Po"
     },
     "badges": {
-      "own": "Wdrożenie własne"
+      "own": "Działa na tej stronie"
     },
     "items": {
       "inquiries": {
-        "title": "Obsługa zapytań ze strony",
-        "problem": "Każde zapytanie trzeba przeczytać, ocenić i na nie odpisać.",
-        "effect": "AI klasyfikuje zapytanie i odsiewa spam, zapisuje je w bazie, powiadamia mnie i od razu wysyła spersonalizowaną odpowiedź.",
+        "title": "Obsługa zapytań od klientów",
+        "problem": "Każde zapytanie ktoś musi przeczytać, ocenić i na nie odpisać, a klient czeka na odpowiedź.",
+        "effect": "AI klasyfikuje zapytanie i odsiewa spam, zapisuje je w bazie, powiadamia odpowiednią osobę i od razu wysyła klientowi spersonalizowaną odpowiedź.",
         "result": ""
       }
     }

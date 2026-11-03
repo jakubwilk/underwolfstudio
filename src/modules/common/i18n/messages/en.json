@@ -164,21 +164,21 @@
   "caseStudies": {
     "label": "Case studies",
     "ariaLabel": "Case studies",
-    "title": "Running in my own business",
-    "description": "The automation that handles inquiries sent through the form on this page.",
+    "title": "How it works in practice",
+    "description": "An automation I can set up in your business too. This version handles the contact form on this page, so you can try it by sending a message.",
     "columns": {
       "process": "Process",
       "before": "Before",
       "after": "After"
     },
     "badges": {
-      "own": "In-house"
+      "own": "Live on this site"
     },
     "items": {
       "inquiries": {
-        "title": "Handling website inquiries",
-        "problem": "Every inquiry has to be read, assessed and answered.",
-        "effect": "AI classifies the inquiry and filters out spam, saves it to a database, notifies me and sends a personalised reply right away.",
+        "title": "Handling customer inquiries",
+        "problem": "Someone has to read, assess and answer every inquiry, while the customer waits for a reply.",
+        "effect": "AI classifies the inquiry and filters out spam, saves it to a database, notifies the right person and sends the customer a personalised reply right away.",
         "result": ""
       }
     }
